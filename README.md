@@ -1,47 +1,47 @@
-# 🏡 EstateCore — Real Estate Property Listing Platform
+﻿# ðŸ¡ EstateCore â€” Real Estate Property Listing Platform
 
 > **A production-grade real estate platform** built on the DevCore shared library.
 > Dark card grid aesthetic, live property availability, QR signboard system, and a full analytics dashboard.
-> Part of the **DevCore Portfolio Suite** — 4 industry projects, 1 shared core.
+> Part of the **DevCore Portfolio Suite** â€” 4 industry projects, 1 shared core.
 
 ---
 
-## ✨ Features
+## âœ¨ Features
 
 ### Public-Facing
-- 🏠 **Property Listings** — Filterable grid of houses, apartments, villas & land
-- 🔍 **Dynamic Search** — Filter by type, city, price range, bedrooms, status — no page reload
-- 📄 **Property Detail Pages** — Hero image, gallery thumbnails, full description, two-column layout
-- 📬 **Inquiry Form** — Visitors submit inquiries directly from any listing page
-- ✅ **Confirmation Page** — Friendly thank-you page with next-steps guide
-- 🖼️ **Storage-backed Image Uploads** — Hero images and gallery photos upload via `Storage::uploadFile()`. Swap between local disk, AWS S3, or Cloudflare R2 by changing one config line — zero code changes required
-- 🗑️ **Automatic Image Cleanup** — Deleting a property also deletes its stored images from whatever provider is active
-- 🖼️ **Gallery Management** — Upload, preview, and remove multiple gallery images per property from the admin panel
-- 📤 **Drag-and-drop Upload UI** — Hero image field supports drag-and-drop with live preview and XHR progress bar
-- 🔴 **SOLD Overlay** — Sold properties display a diagonal ribbon and overlay on their card image
+- ðŸ  **Property Listings** â€” Filterable grid of houses, apartments, villas & land
+- ðŸ” **Dynamic Search** â€” Filter by type, city, price range, bedrooms, status â€” no page reload
+- ðŸ“„ **Property Detail Pages** â€” Hero image, gallery thumbnails, full description, two-column layout
+- ðŸ“¬ **Inquiry Form** â€” Visitors submit inquiries directly from any listing page
+- âœ… **Confirmation Page** â€” Friendly thank-you page with next-steps guide
+- ðŸ–¼ï¸ **Storage-backed Image Uploads** â€” Hero images and gallery photos upload via `Storage::uploadFile()`. Swap between local disk, AWS S3, or Cloudflare R2 by changing one config line â€” zero code changes required
+- ðŸ—‘ï¸ **Automatic Image Cleanup** â€” Deleting a property also deletes its stored images from whatever provider is active
+- ðŸ–¼ï¸ **Gallery Management** â€” Upload, preview, and remove multiple gallery images per property from the admin panel
+- ðŸ“¤ **Drag-and-drop Upload UI** â€” Hero image field supports drag-and-drop with live preview and XHR progress bar
+- ðŸ”´ **SOLD Overlay** â€” Sold properties display a diagonal ribbon and overlay on their card image
 
 ### Real-Time
-- ⚡ **Live Availability Updates** — Property status badges refresh every 4 seconds via `LivePoller`
-- 🆕 **New Inquiry Notifications** — Admin sidebar shows live count of new inquiries
-- 🔄 **Status Propagation** — When admin marks a property Sold, the SOLD ribbon appears on the public listing instantly
+- âš¡ **Live Availability Updates** â€” Property status badges refresh every 4 seconds via `LivePoller`
+- ðŸ†• **New Inquiry Notifications** â€” Admin sidebar shows live count of new inquiries
+- ðŸ”„ **Status Propagation** â€” When admin marks a property Sold, the SOLD ribbon appears on the public listing instantly
 
 ### Admin Portal
-- 📊 **Analytics Dashboard** — KPI stat cards, line/bar/doughnut charts, live inquiry feed
-- 🏠 **Property Management** — Add, edit, delete, toggle availability for all listings
-- 📬 **Inquiry Management** — View, filter, update status, and reply to all inquiries
-- 📱 **QR Code Generator** — Print-optimized grid of QR codes for all properties
-- 🔐 **Secure Auth** — Session-based login with bcrypt password hashing
+- ðŸ“Š **Analytics Dashboard** â€” KPI stat cards, line/bar/doughnut charts, live inquiry feed
+- ðŸ  **Property Management** â€” Add, edit, delete, toggle availability for all listings
+- ðŸ“¬ **Inquiry Management** â€” View, filter, update status, and reply to all inquiries
+- ðŸ“± **QR Code Generator** â€” Print-optimized grid of QR codes for all properties
+- ðŸ” **Secure Auth** â€” Session-based login with bcrypt password hashing
 
 ### Analytics
-- 👁️ **View Tracking** — Every property page visit increments the views counter
-- 📱 **QR Scan Tracking** — `?ref=qr` in the URL increments the `scan_count` column
-- 📈 **Inquiry Trends** — Chart of inquiries per day for the last 30 days
-- 🏆 **Top Properties** — Bar chart of the 10 most-viewed listings
-- 🍩 **Type Distribution** — Doughnut chart: Houses / Apartments / Villas / Land
+- ðŸ‘ï¸ **View Tracking** â€” Every property page visit increments the views counter
+- ðŸ“± **QR Scan Tracking** â€” `?ref=qr` in the URL increments the `scan_count` column
+- ðŸ“ˆ **Inquiry Trends** â€” Chart of inquiries per day for the last 30 days
+- ðŸ† **Top Properties** â€” Bar chart of the 10 most-viewed listings
+- ðŸ© **Type Distribution** â€” Doughnut chart: Houses / Apartments / Villas / Land
 
 ---
 
-## ☁️ Storage System — Image Uploads
+## â˜ï¸ Storage System â€” Image Uploads
 
 EstateCore uses the **DevCore Storage** abstraction for all property image uploads. Switch between local disk, AWS S3, and Cloudflare R2 by changing **one line** in `config.php`.
 
@@ -49,10 +49,10 @@ EstateCore uses the **DevCore Storage** abstraction for all property image uploa
 
 | Feature | Implementation |
 |---------|---------------|
-| **Hero image upload** | Admin drag-and-drops or selects a file → `POST /api/properties.php` → `Storage::uploadFile()` → URL saved to `properties.image_url` |
-| **Gallery image upload** | Separate 🖼️ modal per property → `POST /api/images.php?property_id=X` → `Storage::uploadFile()` → URL saved to `property_images` |
-| **Image deletion** | On property delete or gallery image remove → `Storage::delete()` removes the file from whichever driver is active |
-| **Seed / external URLs** | Unsplash seed images are never passed to `Storage::delete()` — detected via `isStoredUrl()` helper |
+| **Hero image upload** | Admin drag-and-drops or selects a file â†’ `POST /api/properties.php` â†’ `Storage::uploadFile()` â†’ URL saved to `properties.image_url` |
+| **Gallery image upload** | Separate ðŸ–¼ï¸ modal per property â†’ `POST /api/images.php?property_id=X` â†’ `Storage::uploadFile()` â†’ URL saved to `property_images` |
+| **Image deletion** | On property delete or gallery image remove â†’ `Storage::delete()` removes the file from whichever driver is active |
+| **Seed / external URLs** | Unsplash seed images are never passed to `Storage::delete()` â€” detected via `isStoredUrl()` helper |
 
 ### Configure your storage driver
 
@@ -60,7 +60,7 @@ Open `devcore/config.php` and set `storage.driver`:
 
 ```php
 'storage' => [
-    'driver' => 'local',   // ← swap to 's3' or 'r2' to go cloud-native
+    'driver' => 'local',   // â† swap to 's3' or 'r2' to go cloud-native
 
     'local' => [
         'root'     => __DIR__ . '/uploads',
@@ -84,19 +84,19 @@ Open `devcore/config.php` and set `storage.driver`:
 ],
 ```
 
-No code changes required — the `Storage` facade picks the correct driver automatically.
+No code changes required â€” the `Storage` facade picks the correct driver automatically.
 
 ### Supported drivers
 
 | Driver | Class | Best for |
 |--------|-------|---------|
 | `local` | `LocalStorage` | Development, self-hosted |
-| `s3` | `S3Storage` | AWS deployments (no SDK needed — raw HTTP + HMAC-SHA1) |
+| `s3` | `S3Storage` | AWS deployments (no SDK needed â€” raw HTTP + HMAC-SHA1) |
 | `r2` | `R2Storage` | Cloudflare deployments (AWS Signature V4 compatible) |
 
 ---
 
-## 🛠 Tech Stack
+## ðŸ›  Tech Stack
 
 ![PHP 8.1+](https://img.shields.io/badge/PHP-8.1+-777BB4?style=flat&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)
@@ -109,7 +109,7 @@ No code changes required — the `Storage` facade picks the correct driver autom
 
 ---
 
-## 🚀 Setup Instructions
+## ðŸš€ Setup Instructions
 
 ### 1. Clone DevCore Shared Library
 ```bash
@@ -126,17 +126,17 @@ git clone https://github.com/anshuman-dwibedi/estatecore.git
 Expected folder structure:
 ```
 your-project/
-├── devcore/
-│   ├── core/
-│   │   ├── bootstrap.php
-│   │   ├── backend/
-│   │   └── ui/
-│   └── config.example.php
-└── estatecore/
-    ├── index.php
-    ├── property.php
-    ├── admin/
-    └── api/
+â”œâ”€â”€ devcore/
+â”‚   â”œâ”€â”€ core/
+â”‚   â”‚   â”œâ”€â”€ bootstrap.php
+â”‚   â”‚   â”œâ”€â”€ backend/
+â”‚   â”‚   â””â”€â”€ ui/
+â”‚   â””â”€â”€ config.example.php
+â””â”€â”€ estatecore/
+    â”œâ”€â”€ index.php
+    â”œâ”€â”€ property.php
+    â”œâ”€â”€ admin/
+    â””â”€â”€ api/
 ```
 
 ### 3. Configure Database
@@ -164,9 +164,9 @@ mysql -u root -p real_estate < estatecore/database.sql
 
 ### 5. Configure Storage (for image uploads)
 
-The platform uses the DevCore `Storage` facade — swap providers by changing **one line** in `config.php`.
+The platform uses the DevCore `Storage` facade â€” swap providers by changing **one line** in `config.php`.
 
-#### Option A — Local filesystem (default, works immediately)
+#### Option A â€” Local filesystem (default, works immediately)
 ```php
 'storage' => [
     'driver' => 'local',
@@ -181,7 +181,7 @@ Create the uploads directory and make it writable:
 mkdir -p uploads && chmod 755 uploads
 ```
 
-#### Option B — AWS S3
+#### Option B â€” AWS S3
 ```php
 'storage' => [
     'driver' => 's3',
@@ -196,7 +196,7 @@ mkdir -p uploads && chmod 755 uploads
 ],
 ```
 
-#### Option C — Cloudflare R2 (S3-compatible, no egress fees)
+#### Option C â€” Cloudflare R2 (S3-compatible, no egress fees)
 ```php
 'storage' => [
     'driver' => 'r2',
@@ -210,7 +210,7 @@ mkdir -p uploads && chmod 755 uploads
 ],
 ```
 
-> **No code changes needed** — the `Storage` facade auto-selects the correct driver from `config.php`. The same `Storage::uploadFile()` / `Storage::delete()` calls work identically across all three providers.
+> **No code changes needed** â€” the `Storage` facade auto-selects the correct driver from `config.php`. The same `Storage::uploadFile()` / `Storage::delete()` calls work identically across all three providers.
 
 ### 6. Run the Project
 ```bash
@@ -230,31 +230,31 @@ Then visit:
 | Email | `admin@realestate.com` |
 | Password | `admin123` |
 
-> ⚠️ Change this password immediately in production.
+> âš ï¸ Change this password immediately in production.
 
 ---
 
-## 📱 How the QR Signboard System Works
+## ðŸ“± How the QR Signboard System Works
 
 ```
-Agent prints QR code  →  Sticks it on a physical FOR SALE signboard
-         ↓
+Agent prints QR code  â†’  Sticks it on a physical FOR SALE signboard
+         â†“
 Buyer drives past, scans QR with their phone camera
-         ↓
+         â†“
 Buyer lands on: /property.php?id=12&ref=qr
-         ↓
+         â†“
 System increments scan_count in the database
-         ↓
+         â†“
 Buyer sees "Scanned from signboard" banner
-         ↓
-Buyer fills in the inquiry form → Agent gets notification
+         â†“
+Buyer fills in the inquiry form â†’ Agent gets notification
 ```
 
 **Where to access QR codes:**
 1. Log in to admin panel
 2. Go to **QR Generator** (`/admin/qr-generator.php`)
 3. See a grid of all properties with their QR codes
-4. Click **Print All QR Codes** — the page enters print mode
+4. Click **Print All QR Codes** â€” the page enters print mode
 5. Print on label paper or cardstock and stick on signboards
 
 Each QR code encodes a URL like:
@@ -266,7 +266,7 @@ The `?ref=qr` parameter is what triggers scan tracking. The admin QR Generator a
 
 ---
 
-## ⚡ How Real-Time Availability Works
+## âš¡ How Real-Time Availability Works
 
 Every **4 seconds**, a `LivePoller` instance on the public listings page calls `/api/live.php`, which returns the current status of every property in a single lightweight query.
 
@@ -280,7 +280,7 @@ const livePoller = new LivePoller('api/live.php', (res) => {
 }, 4000);
 ```
 
-When an admin changes a property from **Available → Sold** in the admin panel:
+When an admin changes a property from **Available â†’ Sold** in the admin panel:
 1. `PUT /api/properties.php?id=X` is called with `status: 'sold'`
 2. Database is updated immediately
 3. Within 4 seconds, all open browser tabs on the public listings page see the status badge change
@@ -290,7 +290,7 @@ The admin panel also polls for **new inquiry notifications**, showing a live cou
 
 ---
 
-## 📊 How Analytics Tracks Views vs Scans vs Inquiries
+## ðŸ“Š How Analytics Tracks Views vs Scans vs Inquiries
 
 | Metric | How Tracked | Where Stored |
 |--------|-------------|--------------|
@@ -298,7 +298,7 @@ The admin panel also polls for **new inquiry notifications**, showing a live cou
 | **QR Scans** | Incremented only when `?ref=qr` is in URL | `properties.scan_count` |
 | **Inquiries** | Inserted to `inquiries` table on form submit | `inquiries` table |
 | **Inquiries Today** | `COUNT(*) WHERE DATE(created_at) = CURDATE()` | Computed live |
-| **Inquiries by Day** | `Analytics::countByDay()` — last 30 days | Computed live |
+| **Inquiries by Day** | `Analytics::countByDay()` â€” last 30 days | Computed live |
 
 The dashboard fetches all analytics in a single call to `/api/analytics.php`, which uses the shared `Analytics` class methods:
 
@@ -313,63 +313,65 @@ All charts render using `DCChart.line()`, `DCChart.bar()`, and `DCChart.doughnut
 
 ---
 
-## 📁 Project Structure
+## ðŸ“ Project Structure
 
 ```
 estatecore/
-├── index.php              ← Public listings: search, filter, live status
-├── property.php           ← Property detail: gallery, inquiry form, QR widget
-├── inquiry-success.php    ← Confirmation after inquiry submitted
-├── admin/
-│   ├── login.php          ← Secure admin login
-│   ├── dashboard.php      ← Analytics: KPIs, charts, live feed
-│   ├── properties.php     ← Manage listings: add/edit/delete/status
-│   ├── inquiries.php      ← View & manage all inquiries
-│   ├── qr-generator.php   ← Print QR codes for signboards
-│   └── logout.php
-├── api/
-│   ├── properties.php     ← GET/POST/PUT/DELETE properties
-│   ├── inquiries.php      ← GET/POST/PUT/DELETE inquiries
-│   ├── analytics.php      ← GET dashboard stats
-│   └── live.php           ← GET live polling data (statuses + inquiry count)
-└── database.sql           ← Complete schema + 20 properties + 30 inquiries
+â”œâ”€â”€ index.php              â† Public listings: search, filter, live status
+â”œâ”€â”€ property.php           â† Property detail: gallery, inquiry form, QR widget
+â”œâ”€â”€ inquiry-success.php    â† Confirmation after inquiry submitted
+â”œâ”€â”€ admin/
+â”‚   â”œâ”€â”€ login.php          â† Secure admin login
+â”‚   â”œâ”€â”€ dashboard.php      â† Analytics: KPIs, charts, live feed
+â”‚   â”œâ”€â”€ properties.php     â† Manage listings: add/edit/delete/status
+â”‚   â”œâ”€â”€ inquiries.php      â† View & manage all inquiries
+â”‚   â”œâ”€â”€ qr-generator.php   â† Print QR codes for signboards
+â”‚   â””â”€â”€ logout.php
+â”œâ”€â”€ api/
+â”‚   â”œâ”€â”€ properties.php     â† GET/POST/PUT/DELETE properties
+â”‚   â”œâ”€â”€ inquiries.php      â† GET/POST/PUT/DELETE inquiries
+â”‚   â”œâ”€â”€ analytics.php      â† GET dashboard stats
+â”‚   â””â”€â”€ live.php           â† GET live polling data (statuses + inquiry count)
+â””â”€â”€ database.sql           â† Complete schema + 20 properties + 30 inquiries
 ```
 
 ---
 
-## 🔗 DevCore Shared Library
+## ðŸ”— DevCore Shared Library
 
-This project is built on the **DevCore Shared Library** — a reusable backend + UI kit designed for rapid development of production-grade PHP applications.
+This project is built on the **DevCore Shared Library** â€” a reusable backend + UI kit designed for rapid development of production-grade PHP applications.
 
-> 📦 **Repository:** [github.com/anshuman-dwibedi/devcore](https://github.com/anshuman-dwibedi/devcore)
+> 📦 **Repository:** [github.com/anshuman-dwibedi/devcore](https://github.com/anshuman-dwibedi/devcore)\r\n> ðŸ“¦ **Repository:** [github.com/your-org/devcore](https://github.com/your-org/devcore)
 
 The shared library provides:
-- `Database` — Singleton PDO wrapper with query helpers
-- `Api` — Standardised JSON responses (`Api::success()`, `Api::error()`, `Api::paginated()`)
-- `Auth` — Session-based authentication with role support
-- `Analytics` — Reusable analytics query methods (`kpi()`, `countByDay()`, `topItems()`)
-- `QrCode` — QR code image URL generator (no library dependency)
-- `Storage` — Pluggable file storage facade with Local, S3, and R2 drivers (`Storage::uploadFile()`, `Storage::delete()`, `Storage::url()`)
-- `devcore.css` — Dark design system with 60+ utility components
-- `devcore.js` — `DC`, `Toast`, `Modal`, `LivePoller`, `DCChart`, `DCForm`, `DCFormat`
+- `Database` â€” Singleton PDO wrapper with query helpers
+- `Api` â€” Standardised JSON responses (`Api::success()`, `Api::error()`, `Api::paginated()`)
+- `Auth` â€” Session-based authentication with role support
+- `Analytics` â€” Reusable analytics query methods (`kpi()`, `countByDay()`, `topItems()`)
+- `QrCode` â€” QR code image URL generator (no library dependency)
+- `Storage` â€” Pluggable file storage facade with Local, S3, and R2 drivers (`Storage::uploadFile()`, `Storage::delete()`, `Storage::url()`)
+- `devcore.css` â€” Dark design system with 60+ utility components
+- `devcore.js` â€” `DC`, `Toast`, `Modal`, `LivePoller`, `DCChart`, `DCForm`, `DCFormat`
 
 ---
 
-## 🏗 Part of the DevCore Portfolio Suite
+## ðŸ— Part of the DevCore Portfolio Suite
 
-> **4 industry projects · 1 shared core · Production-ready PHP**
+> **4 industry projects Â· 1 shared core Â· Production-ready PHP**
 
 | Project | Description |
 |---------|-------------|
-| 🏡 **EstateCore** *(this project)* | Real Estate Property Listing Platform |
-| 🍽 **Restrodesk** | Restaurant Menu & Ordering System |
-| 🏥 **MediCore** | Medical Appointment Booking Platform |
-| 📦 **Livestore** | E-Commerce Product & Order Management |
+| ðŸ¡ **EstateCore** *(this project)* | Real Estate Property Listing Platform |
+| ðŸ½ **Restrodesk** | Restaurant Menu & Ordering System |
+| ðŸ¥ **MediCore** | Medical Appointment Booking Platform |
+| ðŸ“¦ **Livestore** | E-Commerce Product & Order Management |
 
-All four projects share the same `devcore/core/` library — update the core once, all projects benefit.
+All four projects share the same `devcore/core/` library â€” update the core once, all projects benefit.
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
-MIT — free to use, modify, and build upon.
+MIT â€” free to use, modify, and build upon.
+
+
