@@ -341,7 +341,7 @@ estatecore/
 
 This project is built on the **DevCore Shared Library** â€” a reusable backend + UI kit designed for rapid development of production-grade PHP applications.
 
-> 📦 **Repository:** [github.com/anshuman-dwibedi/devcore](https://github.com/anshuman-dwibedi/devcore)\r\n> ðŸ“¦ **Repository:** [github.com/your-org/devcore](https://github.com/your-org/devcore)
+> 📦 **Repository:** [github.com/anshuman-dwibedi/devcore-shared](https://github.com/anshuman-dwibedi/devcore-shared)
 
 The shared library provides:
 - `Database` â€” Singleton PDO wrapper with query helpers
