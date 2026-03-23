@@ -113,13 +113,13 @@ No code changes required — the `Storage` facade picks the correct driver autom
 
 ### 1. Clone DevCore Shared Library
 ```bash
-git clone https://github.com/your-org/devcore.git
+git clone https://github.com/anshuman-dwibedi/devcore.git
 # Result: devcore/core/bootstrap.php, devcore/core/ui/, etc.
 ```
 
 ### 2. Clone This Project
 ```bash
-git clone https://github.com/your-org/estatecore.git
+git clone https://github.com/anshuman-dwibedi/estatecore.git
 # Place so that: devcore/ and estatecore/ are siblings
 ```
 
@@ -341,7 +341,7 @@ estatecore/
 
 This project is built on the **DevCore Shared Library** — a reusable backend + UI kit designed for rapid development of production-grade PHP applications.
 
-> 📦 **Repository:** [github.com/your-org/devcore](https://github.com/your-org/devcore)
+> 📦 **Repository:** [github.com/anshuman-dwibedi/devcore](https://github.com/anshuman-dwibedi/devcore)
 
 The shared library provides:
 - `Database` — Singleton PDO wrapper with query helpers
