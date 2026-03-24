@@ -1,10 +1,10 @@
-﻿# EstateCore - Real Estate Property Listing Platform
+# EstateCore - Real Estate Property Listing Platform
 
 A production-grade real estate platform built on the DevCore Shared Library. Features filterable property listings, dynamic search, QR signboard system, live availability updates, and a comprehensive analytics dashboard for agents and property managers.
 
 Browse listings, submit inquiries, scan QR codes on signboards, and track property interest metrics in real-time.
 
-**Part of the DevCore Suite** â€” a collection of business-ready web applications sharing a common core library.
+**Part of the DevCore Suite** — a collection of business-ready web applications sharing a common core library.
 
 ---
 
@@ -15,8 +15,8 @@ Browse listings, submit inquiries, scan QR codes on signboards, and track proper
 | Property Listings | Filterable grid view with search, sort, and pagination |
 | Dynamic Search | Filter by property type, city, price range, bedrooms, and availability status without page reload |
 | Property Details | Hero image, gallery thumbnails, full description, two-column layout with inquiry form |
-| Inquiry Management | Public inquiry submission form on every listing â†’ admin inbox with status tracking |
-| Image Storage | Upload hero and gallery images to local filesystem, AWS S3, or Cloudflare R2 â€” change one config line |
+| Inquiry Management | Public inquiry submission form on every listing → admin inbox with status tracking |
+| Image Storage | Upload hero and gallery images to local filesystem, AWS S3, or Cloudflare R2 — change one config line |
 | QR Signboard System | Generate printable QR codes linking to property pages with scan tracking |
 | Live Availability | Property status badges (Available/Pending/Sold) refresh every 4 seconds via polling |
 | SOLD Badge | Sold properties display visual indicator on listing cards and detail pages |
@@ -44,32 +44,32 @@ Browse listings, submit inquiries, scan QR codes on signboards, and track proper
 
 ```
 estatecore/
-â”œâ”€â”€ index.php                   Public property listings page
-â”œâ”€â”€ property.php                Single property detail + inquiry form
-â”œâ”€â”€ inquiry-success.php         Confirmation page after submitting inquiry
-â”œâ”€â”€ config.example.php          Configuration template
-â”œâ”€â”€ database.sql                Schema + sample data
-â”œâ”€â”€ .env.example                Environment variables template
-â”‚
-â”œâ”€â”€ api/
-â”‚   â”œâ”€â”€ properties.php          GET list/filter, POST create, PUT update, DELETE remove (admin)
-â”‚   â”œâ”€â”€ inquiries.php           POST submit, GET list/search, PUT update status, DELETE (admin)
-â”‚   â”œâ”€â”€ images.php              POST upload gallery image, DELETE remove image (admin)
-â”‚   â”œâ”€â”€ live.php                GET real-time status updates (public polling)
-â”‚   â””â”€â”€ analytics.php           GET dashboard statistics (admin only)
-â”‚
-â”œâ”€â”€ admin/
-â”‚   â”œâ”€â”€ login.php               Admin authentication
-â”‚   â”œâ”€â”€ dashboard.php           Analytics dashboard + inquiry feed
-â”‚   â”œâ”€â”€ properties.php          Property management (add/edit/delete)
-â”‚   â”œâ”€â”€ inquiries.php           Inquiry management + reply system
-â”‚   â”œâ”€â”€ qr-generator.php        Printable QR codes for all properties
-â”‚   â””â”€â”€ logout.php              Session logout
-â”‚
-â””â”€â”€ core/                       DevCore shared library (git submodule)
-    â”œâ”€â”€ bootstrap.php           Autoloader + config loader
-    â”œâ”€â”€ backend/                PHP classes (Database, Api, Auth, Storage, etc.)
-    â””â”€â”€ ui/                     CSS framework + JavaScript utilities
+├── index.php                   Public property listings page
+├── property.php                Single property detail + inquiry form
+├── inquiry-success.php         Confirmation page after submitting inquiry
+├── config.example.php          Configuration template
+├── database.sql                Schema + sample data
+├── .env.example                Environment variables template
+│
+├── api/
+│   ├── properties.php          GET list/filter, POST create, PUT update, DELETE remove (admin)
+│   ├── inquiries.php           POST submit, GET list/search, PUT update status, DELETE (admin)
+│   ├── images.php              POST upload gallery image, DELETE remove image (admin)
+│   ├── live.php                GET real-time status updates (public polling)
+│   └── analytics.php           GET dashboard statistics (admin only)
+│
+├── admin/
+│   ├── login.php               Admin authentication
+│   ├── dashboard.php           Analytics dashboard + inquiry feed
+│   ├── properties.php          Property management (add/edit/delete)
+│   ├── inquiries.php           Inquiry management + reply system
+│   ├── qr-generator.php        Printable QR codes for all properties
+│   └── logout.php              Session logout
+│
+└── core/                       DevCore shared library (git submodule)
+    ├── bootstrap.php           Autoloader + config loader
+    ├── backend/                PHP classes (Database, Api, Auth, Storage, etc.)
+    └── ui/                     CSS framework + JavaScript utilities
 ```
 
 ---
@@ -214,7 +214,7 @@ Password: admin123
 **Storage Driver:**
 Supports 'local', 's3', or 'r2'. Changing this one line swaps all image uploads:
 ```php
-'storage' => ['driver' => 'local'],  // â† change this
+'storage' => ['driver' => 'local'],  // ← change this
 ```
 
 ---
@@ -243,7 +243,7 @@ Supports 'local', 's3', or 'r2'. Changing this one line swaps all image uploads:
 ```
 
 **Access QR Generator:**
-- Admin Panel â†’ QR Generator â†’ Print All QR Codes (print-friendly page)
+- Admin Panel → QR Generator → Print All QR Codes (print-friendly page)
 
 ### Live Availability Updates
 
@@ -285,7 +285,7 @@ Storage::uploadFile($_FILES['image'], 'properties');  // Works with any driver
 Storage::delete($image_url);  // Auto-detects if stored vs external
 ```
 
-No code changes needed â€” the same API works identically for local, S3, and R2.
+No code changes needed — the same API works identically for local, S3, and R2.
 
 ---
 
@@ -363,9 +363,8 @@ Create `.env` file or configure in config.php:
 
 ## License
 
-MIT License â€” see LICENSE file for details.
+MIT License — see LICENSE file for details.
 
 ---
 
 **Questions or issues?** Visit the [DevCore Shared Library](https://github.com/anshuman-dwibedi/devcore-shared) repository.
-
