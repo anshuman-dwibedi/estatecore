@@ -6,7 +6,7 @@
  * PUT    /api/inquiries.php?id=X      update inquiry status (admin)
  * DELETE /api/inquiries.php?id=X      delete inquiry (admin)
  */
-require_once dirname(__DIR__, 3) . '/core/bootstrap.php';
+require_once dirname(__DIR__) . '/core/bootstrap.php';
 
 $db     = Database::getInstance();
 $method = $_SERVER['REQUEST_METHOD'];

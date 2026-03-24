@@ -11,7 +11,7 @@
  *
  * Admin-only. Both endpoints require an active admin session.
  */
-require_once dirname(__DIR__, 3) . '/core/bootstrap.php';
+require_once dirname(__DIR__) . '/core/bootstrap.php';
 
 $db     = Database::getInstance();
 $method = $_SERVER['REQUEST_METHOD'];

@@ -2,7 +2,7 @@
 /**
  * Public — Property Listings
  */
-require_once '../../core/bootstrap.php';
+require_once __DIR__ . '/core/bootstrap.php';
 
 $db         = Database::getInstance();
 $cities     = $db->fetchAll("SELECT DISTINCT city FROM properties ORDER BY city ASC");

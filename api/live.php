@@ -4,7 +4,7 @@
  * GET /api/live.php   real-time inquiry count + property statuses
  * Called every 4 seconds by LivePoller on index.php and admin pages
  */
-require_once dirname(__DIR__, 3) . '/core/bootstrap.php';
+require_once dirname(__DIR__) . '/core/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     Api::error('Method not allowed', 405);

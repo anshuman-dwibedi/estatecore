@@ -3,7 +3,7 @@
  * API — Analytics
  * GET /api/analytics.php   full dashboard stats (admin only)
  */
-require_once dirname(__DIR__, 3) . '/core/bootstrap.php';
+require_once dirname(__DIR__) . '/core/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     Api::error('Method not allowed', 405);

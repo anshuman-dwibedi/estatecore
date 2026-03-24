@@ -12,7 +12,7 @@
  *   to properties.image_url.  If no file is sent the existing URL is kept as-is.
  *   You may also pass image_url as a plain text field to set an external URL directly.
  */
-require_once dirname(__DIR__, 3) . '/core/bootstrap.php';
+require_once dirname(__DIR__) . '/core/bootstrap.php';
 
 $db     = Database::getInstance();
 $method = $_SERVER['REQUEST_METHOD'];
