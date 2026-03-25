@@ -4,6 +4,10 @@ A production-grade real estate platform built on the DevCore Shared Library. Fea
 
 Browse listings, submit inquiries, scan QR codes on signboards, and track property interest metrics in real-time.
 
+## Live Deployment
+
+- Production Website: https://estatecore.42web.io
+
 **Part of the DevCore Suite** — a collection of business-ready web applications sharing a common core library.
 
 ---
